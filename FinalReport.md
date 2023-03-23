@@ -74,7 +74,7 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 ## Progress Reports and Final Presentations
 First Progress Report: https://docs.google.com/presentation/d/1FHS0wTwU7fyivqQRh6NMlz-c80lTc7Qd7yyvWIk43dk/edit?usp=sharing
 Second Progress Report: https://docs.google.com/presentation/d/1Ua9LzGS5SNXx9sHRqjRf_p_igt0errfVVrgwLYT4yDQ/edit?usp=sharing
-Final Progress Report: https://docs.google.com/presentation/d/16koA7NQmPwDeUmhrtz9Lsl5q629x4gA_ZpAaT610pVM/edit?usp=sharing
+Final Progress Report: https://docs.google.com/presentation/d/15dULDgGm8JjDpnWzwsE6JQuID-shEysJk5i4PfPxzdU/edit?usp=sharing
 
 ## Acknowledgments
 We would like to thank Professor Jack Silberman and TA Kishore Nukala and Moises Lopez-Mendoza for the opportunity of taking this class and their everlasting assistance.
