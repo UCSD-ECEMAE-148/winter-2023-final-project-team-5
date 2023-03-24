@@ -78,6 +78,8 @@ This claw design got tossed for multiple reasons. The primary one being that the
 
 ## Final Set Up
 
+![](https://drive.google.com/uc?id=1zSepqrNG9TTo-bybwIIAmixFqNbqgQvu)
+
 ### Software
 
 ### Packages and Drivers
