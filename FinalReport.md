@@ -47,6 +47,7 @@ The reason this design was tossed was because the 3D print was made too thick. W
 * Jetson NANO Case
 
 ![](https://drive.google.com/uc?id=1oolONU3gtkhctI77c9BJNAYzmM9MMc1H)
+
 This Jetson NANO design was pulled from an online website. The reason this design was tossed was because during assembly, certain components of the case broke off. Moreover, there was a need for more space in the base plate and utilizing the area on top of the Jetson NANO could be used. Hence, refining the design to be more sturdy and to allow for other components to be stacked on top of the Jetson NANO case became imperative.
 
 * Claw
