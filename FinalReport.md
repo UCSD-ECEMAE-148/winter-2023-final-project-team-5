@@ -79,7 +79,7 @@ This claw design got tossed for multiple reasons. The primary one being that the
 ### Algorithms
 
 ### Schematics
-![](https://drive.google.com/uc?id=1rp3NLlsnr78-YHMusHy_pIdw024OJG4b)
+![](https://drive.google.com/uc?id=1rUv86KUOX2D6T1cIfFEpA-Fdzz34MbE3)
 ## Milestones
 * Donkey AI Training and AI Driving
 * Training the robot to open DonkeySIM was a huge milestone for the group due to lack of exposure to DonkeySIM prior to this class.
