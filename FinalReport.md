@@ -109,6 +109,8 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 
 ### Software Design
 
+## Videos
+
 ## Progress Reports and Final Presentations
 First Progress Report: https://docs.google.com/presentation/d/1FHS0wTwU7fyivqQRh6NMlz-c80lTc7Qd7yyvWIk43dk/edit?usp=sharing
 Second Progress Report: https://docs.google.com/presentation/d/1Ua9LzGS5SNXx9sHRqjRf_p_igt0errfVVrgwLYT4yDQ/edit?usp=sharing
