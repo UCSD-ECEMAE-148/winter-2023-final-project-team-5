@@ -96,7 +96,7 @@ This claw design got tossed for multiple reasons. The primary one being that the
 * Donkey AI Training and AI Driving
 * Training the robot to open DonkeySIM was a huge milestone for the group due to lack of exposure to DonkeySIM prior to this class.
 * Behavioral Imitating AI model (GPU Cluster Training) - 3 Autonomous Laps
-* Object Recognition - Recognizing yellow objecs + tennis ball
+* Object Recognition - Recognizing yellow objects + tennis ball
 
 ## Potential Future Work/Unaccomplished Goals
 There are many suggestions for future work and unaccomplished goals. The goals can be broken down into two projects including hardware design and software.
