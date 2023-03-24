@@ -14,6 +14,9 @@ The project objective can be broken down into two main components with 2 subproj
 
 ## Hardware: Mechanical Design
 * Base Plate
+
+![](https://drive.google.com/file/d/1n9Ku6kVuSJONWaFOfA36iO3zFRGjnnIx/view?usp=share_link)
+
 * Jetson NANO Case
 * Antenna Stand
 * Whole Camera Mount
