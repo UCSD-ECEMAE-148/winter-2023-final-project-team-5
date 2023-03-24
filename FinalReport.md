@@ -21,6 +21,7 @@ The project objective can be broken down into two main components with 2 subproj
 * Claw
 
 ## Previous Designs
+https://drive.google.com/file/d/1d6MruzU13rb37AK4ExvCpDGKtgnX-xDM/view?usp=share_link
 * Servomotor Attachment
 The reason this design was tossed was because the 3D print was made too thick. While the design could have been thinned out and made to be smaller, there was not enough time left in the quarter. That being said, the part worked completely fine for the servomotor and fit snugly to allow proper connection from the servomotor to the claw gear. However, the piece itself was much bigger than the gear component in the claw and therefore inhibited the range of motion for the claw when rotating.
 * Jetson NANO Case
