@@ -19,6 +19,9 @@ The project objective can be broken down into two main components with 2 subproj
 ![](https://drive.google.com/uc?id=1RhUYImfOiptELLj3lSHlfREHwK0W55vA)
 
 * Antenna Stand
+
+![](https://drive.google.com/uc?id=1_5YsfDA5DGM-5H-jC0NBJc8I68_LMijj)
+
 * Whole Camera Mount
 
 ![](https://drive.google.com/uc?id=1d6MruzU13rb37AK4ExvCpDGKtgnX-xDM)
