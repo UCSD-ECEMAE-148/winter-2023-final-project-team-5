@@ -9,9 +9,6 @@
 ## Project Overview
 The project objective can be broken down into two main components with 2 subprojects in the second. The first component is to design a robot that can be trained to drive 3 autonomous laps which was accomplished during the quarter. The second main project objective is the final project. The inspiration is a pet dog that plays fetch. Hence our robot will work to identify a green ball, i.e. a tennis ball, locate it, move towards it, pick it up, and return back to its initial location.
 
-## Gantt Chart
-
-
 ## Hardware: Mechanical Design
 * Base Plate
 
@@ -67,6 +64,10 @@ This claw design got tossed for multiple reasons. The primary one being that the
 * 4 Cell LiPo Battery
 * Antispark Switch
 * 4 Pole DC Motor
+
+## Gantt Chart
+
+![](https://drive.google.com/uc?id=1ODiGicTadxdwxKoQJwqy2LkMJJOUIAhM)
 
 ## Electronic Wiring Schematic
 
