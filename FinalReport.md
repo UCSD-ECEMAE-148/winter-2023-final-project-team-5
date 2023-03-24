@@ -22,12 +22,20 @@ The project objective can be broken down into two main components with 2 subproj
 ![](https://drive.google.com/uc?id=1RhUYImfOiptELLj3lSHlfREHwK0W55vA)
 
 * Antenna Stand
+* Whole Camera Mount
 
 ![](https://drive.google.com/uc?id=1d6MruzU13rb37AK4ExvCpDGKtgnX-xDM)
 
-* Whole Camera Mount
 * Camera Mount Parts
+
+
+![](https://drive.google.com/uc?id=1oyD3zJGKD7pJZTxwGgbIC9UWk9nilAfb)
+![](https://drive.google.com/uc?id=11m7Qp54gDxW_vBQmsf6gBEi6KwbSwnoQ)
+
 * Claw
+
+![](https://drive.google.com/uc?id=1qBsU3PNMqf_KEol1SNwIU4WW751yIEUa)
+
 
 ## Previous Designs
 * Servomotor Attachment
@@ -35,13 +43,9 @@ The project objective can be broken down into two main components with 2 subproj
 ![](https://drive.google.com/uc?id=1lVYhs830ejQiKep6HhoVXtiRm7PWeutt)
 
 The reason this design was tossed was because the 3D print was made too thick. While the design could have been thinned out and made to be smaller, there was not enough time left in the quarter. That being said, the part worked completely fine for the servomotor and fit snugly to allow proper connection from the servomotor to the claw gear. However, the piece itself was much bigger than the gear component in the claw and therefore inhibited the range of motion for the claw when rotating.
-
 * Jetson NANO Case
 This Jetson NANO design was pulled from an online website. The reason this design was tossed was because during assembly, certain components of the case broke off. Moreover, there was a need for more space in the base plate and utilizing the area on top of the Jetson NANO could be used. Hence, refining the design to be more sturdy and to allow for other components to be stacked on top of the Jetson NANO case became imperative.
-
 * Claw
-
-![](https://drive.google.com/uc?id=1mz3C4xSoAnk3_IJo0NWfWE4vGnvLaOYG)
 This claw design got tossed for multiple reasons. The primary one being that there was a design found online that suited the needs of the project better. That being said, while the overall cup design was what was intended for the project, incorporating this design into the actual robot would have been difficult due to introducing more components and parts to translate the motion of the servomotor into the motion of the claw mouth, hence this design was tossed.
 
 ## Electronic Components
