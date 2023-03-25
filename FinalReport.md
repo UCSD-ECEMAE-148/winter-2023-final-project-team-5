@@ -82,9 +82,8 @@ This claw design got tossed for multiple reasons. The primary one being that the
 ## Final Set Up
 
 ![](https://drive.google.com/uc?id=1zSepqrNG9TTo-bybwIIAmixFqNbqgQvu)
-![](https://drive.google.com/uc?id=1NesBT13A2iU2xYJsx2MPvFYWawaJFjEc)
-![](https://drive.google.com/uc?id=1Z48UzEw1ZbHR1VwRM2XVTnnCiq1B69GU)
-![](https://drive.google.com/uc?id=1Z6p6kOi4Mj9KovZtc2hWSfyEJeDWD0vk)
+![](https://drive.google.com/uc?id=1q9iMI3RIqaUdNPy3lyUNbGH-V9U7HNE8)
+![](https://drive.google.com/uc?id=1iI5HZV7hZtzYf84qdmvumIsn0Ikfakta)
 
 ### Software
 
