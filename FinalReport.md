@@ -113,7 +113,9 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 
 ## Videos
 
-[![Watch the video]](https://drive.google.com/file/d/1vfVLuDUj6i20_ljSdQbIolZpCX8HX1RE/view?usp=sharing)
+[![Robot Following Tennis Ball]](https://drive.google.com/file/d/1MhjCJR0Cql-D31eOV3ycqs1MM1ly1piv/view?usp=sharing)
+[![Claw Demonstration]] (https://drive.google.com/file/d/1XQSJmD2X0WHFRSfH-Wv21vTm3lmpRYNG/view?usp=sharing)
+
 
 ## Progress Reports and Final Presentations
 First Progress Report: https://docs.google.com/presentation/d/1FHS0wTwU7fyivqQRh6NMlz-c80lTc7Qd7yyvWIk43dk/edit?usp=sharing
