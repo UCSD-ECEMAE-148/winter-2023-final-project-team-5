@@ -111,6 +111,8 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 
 ### Software Design
 
+## Code
+
 ## Videos
 
 [![Robot Following Tennis Ball]](https://drive.google.com/file/d/1MhjCJR0Cql-D31eOV3ycqs1MM1ly1piv/view?usp=sharing)
