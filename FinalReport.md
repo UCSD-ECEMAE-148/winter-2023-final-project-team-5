@@ -37,7 +37,7 @@ The project objective can be broken down into two main components with 2 subproj
 ![](https://drive.google.com/uc?id=1qBsU3PNMqf_KEol1SNwIU4WW751yIEUa)
 
 
-## Previous Designs
+### Previous Designs
 * Servomotor Attachment
 
 ![](https://drive.google.com/uc?id=1cnf87emX0QBpEkSKb4gQ744vhe3qTxnW)
