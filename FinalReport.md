@@ -87,6 +87,9 @@ This claw design got tossed for multiple reasons. The primary one being that the
 
 ### Software
 
+
+
+![](https://drive.google.com/uc?id=1KAj9wbiTN_L1DSzQkQRa2DjWAeI_orEL)
 ### Packages and Drivers
 
 ### Algorithms
