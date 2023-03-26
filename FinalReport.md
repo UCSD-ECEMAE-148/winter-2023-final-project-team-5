@@ -198,12 +198,14 @@ class VESC:
     def stop(self):
         self.run(0.6 + self.offset, 0)
 
-#YAY
-
 def main():
+
     lower_yellow = np.array([20, 80, 70])
+    
     upper_yellow = np.array([90, 255, 255])
+    
     vesc = VESC("/dev/ttyACM0")
+    
 
     pipeline = depthai.Pipeline()
     cam = pipeline.createColorCamera()
