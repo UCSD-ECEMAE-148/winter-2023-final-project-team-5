@@ -118,6 +118,148 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 
 ## Code
 
+import time
+#import keyboard
+import donkeycar as dk
+import depthai
+import cv2
+import numpy as np
+
+
+class VESC:
+
+    def __init__(self, serial_port, percent=.2, has_sensor=False, start_heartbeat=True, baudrate=115200, timeout=0.05,
+                 steering_scale=1.0, steering_offset=0.0):
+
+        try:
+            import pyvesc
+        except Exception as err:
+            print("\n\n\n\n", err, "\n")
+            print("please use the following command to import pyvesc so that you can also set")
+            print("the servo position:")
+            print("pip install git+https://github.com/LiamBindle/PyVESC.git@master")
+            print("\n\n\n")
+            time.sleep(1)
+            raise
+
+        assert percent <= 1 and percent >= -1, '\n\nOnly percentages are allowed for MAX_VESC_SPEED (we recommend a value of about .2) (negative values flip direction of motor)'
+        self.steering_scale = steering_scale
+        self.steering_offset = steering_offset
+        self.percent = percent
+        self.offset = 0.1
+        self.current_speed = 0.1
+
+        try:
+            self.v = pyvesc.VESC(serial_port, has_sensor, start_heartbeat, baudrate, timeout)
+        except Exception as err:
+            print("\n\n\n\n", err)
+            print("\n\nto fix permission denied errors, try running the following command:")
+            print("sudo chmod a+rw {}".format(serial_port), "\n\n\n\n")
+            time.sleep(1)
+            raise
+
+    def run(self, angle, throttle):
+        self.v.set_servo((angle * self.steering_scale) + self.steering_offset)
+        self.v.set_duty_cycle(throttle * self.percent)
+
+    def speed_up(self):
+        if self.current_speed < 1:
+            self.current_speed += 0.1
+
+    def slow_down(self):
+        if self.current_speed > 1:
+            self.current_speed -= 0.1
+
+    def forward(self):
+        self.run(0.6 + self.offset, 0.2)
+
+    def back(self):
+        self.current_speed = -self.current_speed
+        self.run(0.6 + self.offset, self.current_speed)
+
+    def left(self):
+        self.run(0.35 + self.offset, 0.15)
+
+    def right(self):
+        self.run(0.85 + self.offset, 0.15)
+
+    def hard_left(self):
+        self.run(0 + self.offset, 0.1)
+
+    def hard_right(self):
+        self.run(1 + self.offset, 0.1)
+
+    def stop(self):
+        self.run(0.6 + self.offset, 0)
+
+#YAY
+def main():
+    lower_yellow = np.array([20, 80, 70])
+    upper_yellow = np.array([90, 255, 255])
+    vesc = VESC("/dev/ttyACM0")
+
+    pipeline = depthai.Pipeline()
+    cam = pipeline.createColorCamera()
+    cam.setPreviewSize(700, 500)  # set the preview size to 300x300 pixels
+    cam.setInterleaved(False)
+    cam.setColorOrder(depthai.ColorCameraProperties.ColorOrder.BGR)
+    cam.setResolution(depthai.ColorCameraProperties.SensorResolution.THE_1080_P)
+    cam.setPreviewKeepAspectRatio(False)
+    cam.setVideoSize(1280, 1080)
+    cam.setFps(30)
+    xout = pipeline.createXLinkOut()
+    xout.setStreamName('preview')
+    cam.preview.link(xout.input)
+
+    with depthai.Device(pipeline) as device:
+        output_stream = device.getOutputQueue('preview', 1, True)
+        while True:
+            in_preview = output_stream.get()
+            preview_frame = in_preview.getCvFrame()
+            hsv = cv2.cvtColor(preview_frame, cv2.COLOR_BGR2HSV)
+            mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
+            contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+            # Draw vertical line in the middle of the frame
+            cv2.line(preview_frame, (preview_frame.shape[1] // 2, 0),
+                     (preview_frame.shape[1] // 2, preview_frame.shape[0]), (0, 0, 255), 2)
+
+            largest_area = 0
+            largest_contour = None
+            for cnt in contours:
+                area = cv2.contourArea(cnt)
+                if area > largest_area:
+                    largest_area = area
+                    largest_contour = cnt
+
+            # Draw square around largest contour
+            x, y, w, h = cv2.boundingRect(largest_contour)
+            center_left = x + w // 5
+            center_right = x + ((w // 5) * 4)
+            if center_left > preview_frame.shape[1] // 2:
+                print("right")
+                vesc.right()
+
+            elif center_right < preview_frame.shape[1] // 2:
+                print("left")
+                vesc.left()
+
+            else:
+                print("line")
+                vesc.forward()
+            cv2.rectangle(preview_frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+            # Display resulting image with rectangle and areas
+            cv2.imshow('preview', preview_frame)
+
+            # Exit on 'q' key press
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+
+    # Release the camera and close all windows
+    cv2.destroyAllWindows()
+
+
 ## Videos
 
 [![Robot Following Tennis Ball]](https://drive.google.com/file/d/1MhjCJR0Cql-D31eOV3ycqs1MM1ly1piv/view?usp=sharing)
