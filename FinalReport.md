@@ -85,38 +85,15 @@ This claw design got tossed for multiple reasons. The primary one being that the
 ![](https://drive.google.com/uc?id=1q9iMI3RIqaUdNPy3lyUNbGH-V9U7HNE8)
 ![](https://drive.google.com/uc?id=1iI5HZV7hZtzYf84qdmvumIsn0Ikfakta)
 
-### Software
-
-
+## Software
 
 ![](https://drive.google.com/uc?id=1KAj9wbiTN_L1DSzQkQRa2DjWAeI_orEL)
-### Packages and Drivers
 
-### Algorithms
+For our robot to follow the ball, we used an OpenCV-based vision system. The system uses the video from the robot's camera in real-time to detect the position of the ball. We used a method based on the color of the ball to detect it, by filtering the video to isolate yellow pixels, which represent the ball. We then applied a series of image processing techniques to help the ball's detection.
 
-### Schematics
+Once the ball is detected, the robot calculates its position relative to the camera using the distance between the ball and the center of the image. The robot then uses a PID controller that sends commands to the VESC using PyVesc to adjust its steering angle and speed, allowing it to move towards the ball. For example, if the ball is to the right of the car, the PID controller will calculate the required steering angle to turn the car towards the ball. Basically, the PID controller receives feedback from the camera to adjust the robot's movement in real-time, ensuring that the robot stays on course towards the ball.
 
-
-## Milestones
-* Donkey AI Training and AI Driving
-* Training the robot to open DonkeySIM was a huge milestone for the group due to lack of exposure to DonkeySIM prior to this class.
-* Behavioral Imitating AI model (GPU Cluster Training) - 3 Autonomous Laps
-* Object Recognition - Recognizing yellow objects + tennis ball
-
-## Potential Future Work/Unaccomplished Goals
-There are many suggestions for future work and unaccomplished goals. The goals can be broken down into two projects including hardware design and software.
-
-### Hardware Design
-Some future work and unaccomplished goals for this robot include a refined claw design. As described previously, the claw design had gone through multiple iterations to refine it. That being said, there were some issues for the claw design printed out in this run. The primary error includes screw holes. The screw holes within the gear for the claw did not match any screws to our availability due to the CAD model design. Thus, in the future, it would be wise to make the hole either bigger or smaller to more appropriately fit a specific screw size.
-Another key future suggestion for the design is the mouth of the claw and how it opens. Given the project objective to grab a ball, the current design for the claw makes it a bit difficult to pick up the ball. This is because the two lips of the claw mouth open at an angle and close at an angle with the help of the gears. In the future, it would be useful to have a claw mouth that, instead of opening its mouth at an angle and thereby potentially pushing the ball away, will open and close with both sides parallel to each other, using a four bar linkage system. If the lips of the claw mouth were to open in a sideways linear motion and close in a sideways linear motion instead, there would be less of a chance that the ball would slip and run away from the robot. Moreover, for future applications, it would be nice to design a claw that would be more mdoular to different objects including a soda can, a water bottle, or even a book.
-
-Another future suggestion includes refining the design for the servomotor to claw cover. Currently, as described above, there was a previous iteration of the servomotor to claw that was designed. However, upon construction, the design constructed on CAD turned out to be too thick and too big. While the servomotor fit snugly into the printed part, the design itself ultimately had to be tossed as the printed component got in the range of motion for the claw, thereby inhibiting its movements. Instead, the design and print was tossed and the servomotor was simply taped to the claw. That being said, for future design work, it would be wise to thin down the servomotor to claw CAD file so that it does not get in the way of the claw’s two gears and its movement.
-
-And lastly, one important thing to think about when building the Jetson NANO case is the optimization of space on the top of the robot. For our previous Jetson NANO case we got a pre-made model that we found and printed it, but with time, when actually assembling the robot, we felt like there was not enough space to put all the necessary parts. Because of that we designed a new Jetson NANO case, which allowed us to place things on top of it.
-
-### Software Design
-
-## Code
+### Code
 
 import time
 
@@ -267,6 +244,27 @@ def main():
 
     # Release the camera and close all windows
     cv2.destroyAllWindows()
+
+
+## Milestones
+* Donkey AI Training and AI Driving
+* Training the robot to open DonkeySIM was a huge milestone for the group due to lack of exposure to DonkeySIM prior to this class.
+* Behavioral Imitating AI model (GPU Cluster Training) - 3 Autonomous Laps
+* Object Recognition - Recognizing yellow objects + tennis ball
+
+## Potential Future Work/Unaccomplished Goals
+There are many suggestions for future work and unaccomplished goals. The goals can be broken down into two projects including hardware design and software.
+
+### Hardware Design
+Some future work and unaccomplished goals for this robot include a refined claw design. As described previously, the claw design had gone through multiple iterations to refine it. That being said, there were some issues for the claw design printed out in this run. The primary error includes screw holes. The screw holes within the gear for the claw did not match any screws to our availability due to the CAD model design. Thus, in the future, it would be wise to make the hole either bigger or smaller to more appropriately fit a specific screw size.
+Another key future suggestion for the design is the mouth of the claw and how it opens. Given the project objective to grab a ball, the current design for the claw makes it a bit difficult to pick up the ball. This is because the two lips of the claw mouth open at an angle and close at an angle with the help of the gears. In the future, it would be useful to have a claw mouth that, instead of opening its mouth at an angle and thereby potentially pushing the ball away, will open and close with both sides parallel to each other, using a four bar linkage system. If the lips of the claw mouth were to open in a sideways linear motion and close in a sideways linear motion instead, there would be less of a chance that the ball would slip and run away from the robot. Moreover, for future applications, it would be nice to design a claw that would be more mdoular to different objects including a soda can, a water bottle, or even a book.
+
+Another future suggestion includes refining the design for the servomotor to claw cover. Currently, as described above, there was a previous iteration of the servomotor to claw that was designed. However, upon construction, the design constructed on CAD turned out to be too thick and too big. While the servomotor fit snugly into the printed part, the design itself ultimately had to be tossed as the printed component got in the range of motion for the claw, thereby inhibiting its movements. Instead, the design and print was tossed and the servomotor was simply taped to the claw. That being said, for future design work, it would be wise to thin down the servomotor to claw CAD file so that it does not get in the way of the claw’s two gears and its movement.
+
+And lastly, one important thing to think about when building the Jetson NANO case is the optimization of space on the top of the robot. For our previous Jetson NANO case we got a pre-made model that we found and printed it, but with time, when actually assembling the robot, we felt like there was not enough space to put all the necessary parts. Because of that we designed a new Jetson NANO case, which allowed us to place things on top of it.
+
+### Software Design
+ENTER FUTURE SOFTWARE INFO HERE
 
 
 ## Videos
