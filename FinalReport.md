@@ -89,9 +89,9 @@ This claw design got tossed for multiple reasons. The primary one being that the
 
 ![](https://drive.google.com/uc?id=1KAj9wbiTN_L1DSzQkQRa2DjWAeI_orEL)
 
-For our robot to follow the ball, we used an OpenCV-based vision system. The system uses the video from the robot's camera in real-time to detect the position of the ball. We used a method based on the color of the ball to detect it, by filtering the video to isolate yellow pixels, which represent the ball. We then applied a series of image processing techniques to help the ball's detection.
+For our robot to follow the ball, we used an OpenCV-based vision system. The system uses the video from the robot's camera in real-time to detect the position of the ball. We used a method based on the color of the ball to detect it, by filtering the video to isolate a certain color range of pixels, which represent the ball. We then applied a series of image processing techniques to help the ball's detection. The image processing pipeline when it detects the green ball in the camera frame using OpenCV, it draws a bounding box around it.
 
-Once the ball is detected, the robot calculates its position relative to the camera using the distance between the ball and the center of the image. The robot then uses a PID controller that sends commands to the VESC using PyVesc to adjust its steering angle and speed, allowing it to move towards the ball. For example, if the ball is to the right of the car, the PID controller will calculate the required steering angle to turn the car towards the ball. Basically, the PID controller receives feedback from the camera to adjust the robot's movement in real-time, ensuring that the robot stays on course towards the ball.
+Once the ball is detected, the robot calculates its position relative to the camera using the distance between the ball and the center of the image. Our ball-tracking system relied on a simple approach of dividing the bounding box in which the ball is contained into five equally-spaced vertical regions, and drawing a vertical line in the center of the camera view. If the ball was to the left of the centerline, the robot would turn left until the ball was back in the center of the view. Similarly, if the ball was to the right of the centerline, the robot would turn right until the ball was back in the center. If the ball was directly in the center of the view, the robot would continue moving forward, with a greater speed than when turning.
 
 ### Code
 
@@ -264,7 +264,14 @@ Another future suggestion includes refining the design for the servomotor to cla
 And lastly, one important thing to think about when building the Jetson NANO case is the optimization of space on the top of the robot. For our previous Jetson NANO case we got a pre-made model that we found and printed it, but with time, when actually assembling the robot, we felt like there was not enough space to put all the necessary parts. Because of that we designed a new Jetson NANO case, which allowed us to place things on top of it.
 
 ### Software Design
-ENTER FUTURE SOFTWARE INFO HERE
+For future work, a good plan to follow for picking up the ball would involve designing a claw mechanism that could be attached to the front of the robot as depicted in the final set up images. The claw would consist of two spoon shaped arms, as explained above, that could be opened and closed using a servomotor through a servo controller. The idea would be to use the vision system to identify the ball, then signal the PID controller to stop the robot and activate the claw mechanism.
+
+Further down the line, the servo motor would open the arms of the claw. The robot would then move forward until the ball was between the two arms of the claw and then the servo motor would close the arms of the claw, effectively holding the ball in between them. After the ball is securely held by the claw, the robot would use a person recognition system to return the ball to the closest person.
+
+Going more into software, an important step to take to improve the software would be to use a PID controller which offers a multitude of advantages. By using a PID controller, a command would be sent to the VESC using PyVesc to adjust the steering angle and speed of the robot allowing for the robot to move towards the ball. For example, if the ball is to the right of the car, the PID controller would calculate the required steering angle to turn the car towards the ball. The PID controller would receive feedback from the camera to adjust the robot’s movement in real-time, ensuring that the robot stays on course for the ball. In the current design, according to the video, when the ball is located in the right area, the robot responds by turning extremely to the right, often more than what is needed. That being said, by using a PID controller, the robot would be able to turn the required amount needed, either right or left, to reach the ball.
+
+Although we were not able to successfully implement the claw mechanism in our project, we believe that our approach was a promising one for future directions.
+
 
 
 ## Videos
