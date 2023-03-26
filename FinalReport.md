@@ -119,11 +119,17 @@ And lastly, one important thing to think about when building the Jetson NANO cas
 ## Code
 
 import time
+
 #import keyboard
+
 import donkeycar as dk
+
 import depthai
+
 import cv2
+
 import numpy as np
+
 
 
 class VESC:
@@ -193,6 +199,7 @@ class VESC:
         self.run(0.6 + self.offset, 0)
 
 #YAY
+
 def main():
     lower_yellow = np.array([20, 80, 70])
     upper_yellow = np.array([90, 255, 255])
